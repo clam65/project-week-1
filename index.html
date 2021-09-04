@@ -5,13 +5,12 @@
 <head>
 
     <title>Alarm Clock</title>
+    
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale= 1.0">
 
-    <link rel="stylesheet" href="mystyle.css">
-
-    <script src="index.js"></script>
+    <script src="./index.js"></script>
 
 
 <style>
@@ -19,7 +18,7 @@
 .Main-Background {
 
     position: absolute;
-    left: 450px;
+    left: 500px;
     display: inline-grid;
     grid-template-rows: 500px 350px ;
     grid-template-columns: 800px;
@@ -27,6 +26,68 @@
     background-color: powderblue;
     z-index: -1;
     border: 1px solid black;
+    border-radius: 20px;
+
+}
+
+
+#Clock-Display {
+
+    position: relative;
+    left: 100px;
+    top: 70px;
+    text-align: center; 
+    font-size: 80px;
+    font-weight: bold;
+    font-family: verdana;
+    padding: 150px 20px;
+    width: 600px;
+    height: 200px;
+
+}
+
+
+#Date-Display {
+
+position: relative;
+top: 10px;
+text-align: center; 
+font-size: 48px;
+font-weight: bold;
+font-family: verdana;
+padding: 45px 100px;
+max-width: 250px;
+max-height: 150px;
+
+}
+
+#Day-Of-Week-Display {
+
+position: relative;
+left: 10px;
+top: 5px;
+text-align: center; 
+font-size: 48px;
+font-weight: bold;
+font-family: verdana;
+padding: 45px 10px;
+width: 200px;
+height: auto;
+
+}
+
+#Day-Display {
+
+position: relative;
+left: 10px;
+top: 5px;
+text-align: center; 
+font-size: 48px;
+font-weight: bold;
+font-family: verdana;
+padding: 45px 10px;
+width: auto;
+height: auto;
 
 }
 
@@ -36,6 +97,8 @@
     display: grid;
     grid-template-rows: 200px 150px;
     border: 1px solid black;
+    border-collapse: collapse;
+    border-radius: 20px;
 
 }
 
@@ -43,21 +106,59 @@
 .item2-sub-1 {
 
     display: grid;
-    grid-template-columns: 100px 350px;
-    grid-gap: 30px;
+    grid-template-columns: auto auto auto;
     border: 1px solid black;
-    
+    border-radius: 20px;
+    border-collapse: collapse;
+
 
 }
 
 
 .item2-sub-2 {
 
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    position: relative;
+    left: 85px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-gap: 30px;
+
+    margin-top: 33px; 
+    border-radius: 20px;
 
 }
+
+.Day-Display {
+
+    border: 1px solid black;
+
+
+}
+
+
+.Date-Display {
+
+
+    border: 1px solid black;
+
+
+}
+
+button {
+  background-color: grey;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  height: 60px;
+}
+
+
 
 </style>
 
@@ -73,7 +174,7 @@
 
         <div class="item1">
 
-               <div class="Clock-Display"></div> 
+               <div id="Clock-Display"></div> 
 
         </div>
 
@@ -81,11 +182,11 @@
 
             <div class="item2-sub-1">
             
-                <div class="Day-Display"></div>
+                <div id="Day-Display"></div>
 
-
+                <div id="Day-Of-Week-Display"></div>
                 
-                <div class="Date-Display"></div>
+                <div id="Date-Display"></div>
 
 
             </div>    
@@ -93,37 +194,22 @@
 
             <div class="item2-sub-2">
 
-                <button id="toggle" onclick="">Set Alarm</button>
-                <button id="Set-Month" onclick="">Month</button>
-                <button id="Set-Day" onclick="">Day</button>
-                <button id="Set-Hour" onclick="">Hour</button>
-                <button id="Set-Minute" onclick="">Minute</button>
-
+                <button id="Toggle" >Set Alarm</button>
+                <button id="Set-Month" onclick="setMonth">Month</button>
+                <button id="Set-Day" onclick="setDay()">Day</button>
+                <button id="Set-Hour" onclick="setHour()">Hour</button>
+                <button id="Set-Minute" onclick="setMinute()">Minute</button>
                 
             </div>
 
-
-
-
-
-
         </div>
 
-
-
     </div>
-
-
-
-
-
-
-
 
 </body>
 
 
-
+<footer></footer>
 
 
 </html>
